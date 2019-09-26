@@ -1,0 +1,14 @@
+from appium import webdriver
+import subprocess
+print("Opening Android Emulator!!")
+subprocess.Popen("C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\emulator\\.\emulator -avd Nexus_5X_API_25")
+# Import emulator path from your local system's folder.
+a1 ={
+  "platformName": "Android",
+  "deviceName": "Android Emulator",
+  "appPackage": "com.salesforce.chatter",
+  "appWaitActivity": "com.salesforce.auth.ChatterLoginEulaActivity",
+  "app": "C:\\Users\\Administrator\\Downloads\\MOBILE TESTING DOWNLOADS\\com.salesforce.chatter_2018-10-22.apk"
+#Download the apk of Salesforce and provide the path in this file,so that it can open the emulator and download this apk.  
+}
+driver = webdriver.Remote("http://localhost:4723/wd/hub", a1)#To call emulator using Appium
